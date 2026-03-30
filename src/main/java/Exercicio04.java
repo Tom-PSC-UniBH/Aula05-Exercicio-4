@@ -1,15 +1,23 @@
 // Nome: Tom Alexander
 // Matrícula: 1261933671
 
-void main() {
+void main() throws InterruptedException {
   try (Scanner input = new Scanner(System.in)) {
-    System.out.print("Digite um número inteiro: ");
-    int number = input.nextInt();
+    System.out.print("Digite N: ");
+    int limit = input.nextInt();
 
-    if (number % 2 == 0) {
-      System.out.println(number + " é par.");
-    } else {
-      System.out.println(number + " é ímpar.");
+    if (limit <= 0) {
+      System.err.println("Valor inválido. O limite da contagem deve ser maior que zero!");
+      return;
     }
+
+    int counter = 1;
+
+    while (counter <= limit) {
+      System.out.println(counter);
+      counter++;
+    }
+
+    System.out.println("Contagem concluída!");
   }
 }
